@@ -1,1 +1,33 @@
 All the examples in this folder are taken from different other resources
+credit to https://en.cppreference.com/w/cpp/11
+
+Core functionalities of C++11
+
+auto | decltype 
+defaulted and deleted functions
+final and overide
+trailing return type
+rvalue reference
+move constructor and move assignment operator
+scoped enums
+constexpr and literal types
+list initialization
+deligating and inherited constructors
+brace or equal initializer
+nullptr
+long long
+char16_t and char32_t
+type aliases
+variadic template
+generalized unions
+generalized pods
+unicode string literals
+attributes
+lambda expression
+noexcept
+alignof and alignas
+multithreaded memory model
+thread local storage
+range-for
+static assert
+
