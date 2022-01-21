@@ -1,0 +1,11 @@
+
+SOLID principles are 
+
+-Single Responsibility - A class responsibility and function should be specific to one role, shall update / change the class due to only one change, 
+-Open-closed principle - class should be open for extension and close for the modifications. i.e we should be able to add new functionality without touching the existing code.
+-Liskov substitution principle - states subclasses should be suitable for their base classes
+-Interface segregation principle - states that many client specific interfaces are better than one general purpose interface. clients shouldn't be forced to implement a function they don't need
+-Dependency Inversion Principle - states that our class should depend on interface / abstract class instead of concrete classes
+
+-
+

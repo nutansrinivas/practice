@@ -1,0 +1,31 @@
+
+c99 preprocessor
+right angle brackets
+extended friend declaration
+long long
+delegating constructors
+extern template
+constexpr
+template aliases
+char16_t, char32_t
+alignas, alignof
+strong typed enum
+string literals
+inline namespaces
+
+
+# auto support   - done
+# nullptr  - yes
+# shared_ptr - yes
+# enum class 
+# static_assert 
+# variadic template
+# range based for loop
+# initializer list
+# noexcept
+# move   (&&, std::move) - rvalue reference
+# lambda
+# override identifier
+# final identifier
+# std::thread
+# unordered containers
