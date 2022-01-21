@@ -1,0 +1,30 @@
+
+In C++11
+	
+	Memory model 
+	Threads
+	Mutexes and locks
+	Thread local data
+	condition variable
+	Tasks
+
+C++14
+
+	Reader-writer locks
+
+C++17
+	
+	Parallel STL
+
+C++20
+
+	Atomic Smart pointers
+	std::future extensions
+	Latches and barriers
+	coroutines
+	transactional memory
+	task blocks
+
+
+
+

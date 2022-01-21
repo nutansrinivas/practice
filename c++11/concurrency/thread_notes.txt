@@ -1,0 +1,85 @@
+
+
+-A thread is a distinct execution path, or a subprocess. Within a process, you can have either a single thread or multiple threads sharing the same process resources.
+
+-Multithreading is the ability to have multiple threads executing concurrently. While each thread shares the same process resources, they operate independently of each other.
+
+-A process is a single application or program, whereas a thread is a subprocess within that application or program. Each process has its own address space in memory; threads share their address space.
+
+-There are five states a thread can have: New, Runnable, Running, Waited/Blocked and Dead/Terminated
+
+-A race condition occurs when multiple concurrent threads race to be the first to run. If the thread that wins the race was not the one that was supposed to run first, the code may exhibit unexpected behavior. The problem can be resolved with synchronization.
+
+-Context switching is where the current state of a thread or process is stored so the execution of that thread can be resumed at a later time. This enables a single CPU to manage multiple threads or processes
+
+-Thread starvation is when there is insufficient CPU capacity to execute a thread. This can happen with low-priority threads, or threads that are demoted in favor of other threads.
+
+-Time slicing is the process used by the thread scheduler to divide CPU time between the available active threads.
+
+When thread is created, what happens in background how we know how many threads running ? 
+- every process maintains a threadtable for all user level threads 
+- os will maintain a thread table for kernel level threads along with process table
+
+- for every threads it will create a program counter, register set and stack
+- stack size per thread is configurable using either ulimit -s, using pthread_setstacksize(), default it is 8 mb
+
+- thread can be created as joinable or detachable, to get its state pthread_attr_getdetachstate / setdetachstate apis 
+
+- thread attributes are - affinity, detachstate, guardsize, stacksize, schedpolicy, scope, stack, stackaddr, setschedparam (priority)
+
+- max number of threads allowed on system - /proc/sys/kernel/thread_max 
+
+- when a thread terminates, process-shared resources like mutex, semaphore, conditional variables and file descriptors are not released
+
+max stack size per process - 
+max number of threads allowed per process - 
+
+set process priority
+set thread priority 
+
+bind process to a core
+bind thread to a core
+
+
+pthread_setschedparam - 
+pthread_setschedparam(pthread_t thread, int policy, const struct sched_param *param);
+pthread_getschedparam(pthread_t thread, int *policy, struct sched_param *param);
+
+struct sched_param { 
+    int sched_priority;     /* Scheduling priority */
+};
+
+policy - SCHED_FIFO, SCHED_RR, SCHED_OTHER
+
+PTHREAD_INHERIT_SCHED Threads that are created using attr inherit scheduling attributes from the creating thread; the scheduling attributes in attr are ignored.
+
+PTHREAD_EXPLICIT_SCHED Threads that are created using attr take their scheduling attributes from the values specified by the attributes object.
+
+thread contention scope - PTHREAD_SCOPE_PROCESS, PTHREAD_SCOPE_SYSTEM - pthread_setscope()
+
+what is the diffefrence for process and thread in /proc/pid file system ?
+user threads are mapped to kernel threads by the thread library, The way this mapping is done is called the thread model, there are three possible thread models corresponding to three different ways to map the user threads to kernel threads
+
+
+
+//setting affinity for process / thread 
+
+int sched_setaffinity(pid_t pid, size_t cpusetsize, const cpu_set_t *mask);  //sched.h
+int sched_getaffinity(pid_t pid, size_t cpusetsize, cpu_set_t *mask)
+
+
+int main()
+{
+	pthread_attr_t attr;
+	cpu_set_t cpuset;
+
+	CPU_ZERO(&cpuset);
+	CPU_SET(speid, &cpuset)
+
+	pthread_t thread = pthread_self();
+	s = pthread_setaffinity_np(thread, sizeof(cpu_set_t), &cpuset);
+	if (s != 0) {
+		handle_error_en(s, "pthread_setaffinity_np");
+	}
+
+}
