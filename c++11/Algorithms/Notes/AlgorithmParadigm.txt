@@ -1,0 +1,22 @@
+Algorithm Paradigms / Algorithm Design Paradigm / Algorithm Technique / Algorithm Strategy : is a generic method or appraoch which underlies the design of a class of algorithms
+
+Different types of appraoches are :
+
+#	Brute Force		: refers to a programming style that doesn't include any shortcuts to improve performance, 
+									instead relies on sheer computing power to try all possibilities until the solution to a problem found. 
+									time complexity of brute force is o(n*m)
+				Example : selection sort, bubble sort, sequential search, brute force string matching, closest pair problem, 
+									convex hull problem, travelling salesman problem, knapsack problem, assignment problem 
+
+#	Divide and Conquer	:	break the problem into sub problems of same type, recursively solve each sub problem. 
+												combine all sub problem solutions to solve main problem.
+				Example	:	merge sort, quick sort, binary search, binary tree traversal, multiplication of large integers, 
+									stassen's matrix multiplication, closest pair problem, convex hull problem, 
+	
+#	Decrease and Conquer
+# Transform and Conquer
+#	Space and Tradeoff
+#	Dynamic Programming
+#	Greedy Technique
+#	Back Tracking
+#	Branch and Bound
